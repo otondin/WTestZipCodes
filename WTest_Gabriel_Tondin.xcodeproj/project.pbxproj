@@ -1,0 +1,629 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E36F0E0A272C110800E07678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E09272C110800E07678 /* AppDelegate.swift */; };
+		E36F0E0C272C110800E07678 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E0B272C110800E07678 /* SceneDelegate.swift */; };
+		E36F0E0E272C110800E07678 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E0D272C110800E07678 /* ViewController.swift */; };
+		E36F0E11272C110800E07678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36F0E0F272C110800E07678 /* Main.storyboard */; };
+		E36F0E13272C110B00E07678 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36F0E12272C110B00E07678 /* Assets.xcassets */; };
+		E36F0E16272C110B00E07678 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36F0E14272C110B00E07678 /* LaunchScreen.storyboard */; };
+		E36F0E21272C110C00E07678 /* WTest_Gabriel_TondinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E20272C110C00E07678 /* WTest_Gabriel_TondinTests.swift */; };
+		E36F0E2B272C110C00E07678 /* WTest_Gabriel_TondinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E2A272C110C00E07678 /* WTest_Gabriel_TondinUITests.swift */; };
+		E36F0E2D272C110C00E07678 /* WTest_Gabriel_TondinUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E2C272C110C00E07678 /* WTest_Gabriel_TondinUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E36F0E1D272C110C00E07678 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E36F0DFE272C110800E07678 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E36F0E05272C110800E07678;
+			remoteInfo = WTest_Gabriel_Tondin;
+		};
+		E36F0E27272C110C00E07678 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E36F0DFE272C110800E07678 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E36F0E05272C110800E07678;
+			remoteInfo = WTest_Gabriel_Tondin;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E36F0E06272C110800E07678 /* WTest_Gabriel_Tondin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTest_Gabriel_Tondin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E36F0E09272C110800E07678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E36F0E0B272C110800E07678 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E36F0E0D272C110800E07678 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E36F0E10272C110800E07678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E36F0E12272C110B00E07678 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E36F0E15272C110B00E07678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E36F0E17272C110B00E07678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E36F0E1C272C110C00E07678 /* WTest_Gabriel_TondinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTest_Gabriel_TondinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E36F0E20272C110C00E07678 /* WTest_Gabriel_TondinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTest_Gabriel_TondinTests.swift; sourceTree = "<group>"; };
+		E36F0E26272C110C00E07678 /* WTest_Gabriel_TondinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTest_Gabriel_TondinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E36F0E2A272C110C00E07678 /* WTest_Gabriel_TondinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTest_Gabriel_TondinUITests.swift; sourceTree = "<group>"; };
+		E36F0E2C272C110C00E07678 /* WTest_Gabriel_TondinUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTest_Gabriel_TondinUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E36F0E03272C110800E07678 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36F0E19272C110C00E07678 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36F0E23272C110C00E07678 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E36F0DFD272C110800E07678 = {
+			isa = PBXGroup;
+			children = (
+				E36F0E08272C110800E07678 /* WTest_Gabriel_Tondin */,
+				E36F0E1F272C110C00E07678 /* WTest_Gabriel_TondinTests */,
+				E36F0E29272C110C00E07678 /* WTest_Gabriel_TondinUITests */,
+				E36F0E07272C110800E07678 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E36F0E07272C110800E07678 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E36F0E06272C110800E07678 /* WTest_Gabriel_Tondin.app */,
+				E36F0E1C272C110C00E07678 /* WTest_Gabriel_TondinTests.xctest */,
+				E36F0E26272C110C00E07678 /* WTest_Gabriel_TondinUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E36F0E08272C110800E07678 /* WTest_Gabriel_Tondin */ = {
+			isa = PBXGroup;
+			children = (
+				E36F0E09272C110800E07678 /* AppDelegate.swift */,
+				E36F0E0B272C110800E07678 /* SceneDelegate.swift */,
+				E36F0E0D272C110800E07678 /* ViewController.swift */,
+				E36F0E0F272C110800E07678 /* Main.storyboard */,
+				E36F0E12272C110B00E07678 /* Assets.xcassets */,
+				E36F0E14272C110B00E07678 /* LaunchScreen.storyboard */,
+				E36F0E17272C110B00E07678 /* Info.plist */,
+			);
+			path = WTest_Gabriel_Tondin;
+			sourceTree = "<group>";
+		};
+		E36F0E1F272C110C00E07678 /* WTest_Gabriel_TondinTests */ = {
+			isa = PBXGroup;
+			children = (
+				E36F0E20272C110C00E07678 /* WTest_Gabriel_TondinTests.swift */,
+			);
+			path = WTest_Gabriel_TondinTests;
+			sourceTree = "<group>";
+		};
+		E36F0E29272C110C00E07678 /* WTest_Gabriel_TondinUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E36F0E2A272C110C00E07678 /* WTest_Gabriel_TondinUITests.swift */,
+				E36F0E2C272C110C00E07678 /* WTest_Gabriel_TondinUITestsLaunchTests.swift */,
+			);
+			path = WTest_Gabriel_TondinUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E36F0E05272C110800E07678 /* WTest_Gabriel_Tondin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E36F0E30272C110C00E07678 /* Build configuration list for PBXNativeTarget "WTest_Gabriel_Tondin" */;
+			buildPhases = (
+				E36F0E02272C110800E07678 /* Sources */,
+				E36F0E03272C110800E07678 /* Frameworks */,
+				E36F0E04272C110800E07678 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WTest_Gabriel_Tondin;
+			productName = WTest_Gabriel_Tondin;
+			productReference = E36F0E06272C110800E07678 /* WTest_Gabriel_Tondin.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E36F0E1B272C110C00E07678 /* WTest_Gabriel_TondinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E36F0E33272C110C00E07678 /* Build configuration list for PBXNativeTarget "WTest_Gabriel_TondinTests" */;
+			buildPhases = (
+				E36F0E18272C110C00E07678 /* Sources */,
+				E36F0E19272C110C00E07678 /* Frameworks */,
+				E36F0E1A272C110C00E07678 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E36F0E1E272C110C00E07678 /* PBXTargetDependency */,
+			);
+			name = WTest_Gabriel_TondinTests;
+			productName = WTest_Gabriel_TondinTests;
+			productReference = E36F0E1C272C110C00E07678 /* WTest_Gabriel_TondinTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E36F0E25272C110C00E07678 /* WTest_Gabriel_TondinUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E36F0E36272C110C00E07678 /* Build configuration list for PBXNativeTarget "WTest_Gabriel_TondinUITests" */;
+			buildPhases = (
+				E36F0E22272C110C00E07678 /* Sources */,
+				E36F0E23272C110C00E07678 /* Frameworks */,
+				E36F0E24272C110C00E07678 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E36F0E28272C110C00E07678 /* PBXTargetDependency */,
+			);
+			name = WTest_Gabriel_TondinUITests;
+			productName = WTest_Gabriel_TondinUITests;
+			productReference = E36F0E26272C110C00E07678 /* WTest_Gabriel_TondinUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E36F0DFE272C110800E07678 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					E36F0E05272C110800E07678 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					E36F0E1B272C110C00E07678 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = E36F0E05272C110800E07678;
+					};
+					E36F0E25272C110C00E07678 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = E36F0E05272C110800E07678;
+					};
+				};
+			};
+			buildConfigurationList = E36F0E01272C110800E07678 /* Build configuration list for PBXProject "WTest_Gabriel_Tondin" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E36F0DFD272C110800E07678;
+			productRefGroup = E36F0E07272C110800E07678 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E36F0E05272C110800E07678 /* WTest_Gabriel_Tondin */,
+				E36F0E1B272C110C00E07678 /* WTest_Gabriel_TondinTests */,
+				E36F0E25272C110C00E07678 /* WTest_Gabriel_TondinUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E36F0E04272C110800E07678 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E36F0E16272C110B00E07678 /* LaunchScreen.storyboard in Resources */,
+				E36F0E13272C110B00E07678 /* Assets.xcassets in Resources */,
+				E36F0E11272C110800E07678 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36F0E1A272C110C00E07678 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36F0E24272C110C00E07678 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E36F0E02272C110800E07678 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E36F0E0E272C110800E07678 /* ViewController.swift in Sources */,
+				E36F0E0A272C110800E07678 /* AppDelegate.swift in Sources */,
+				E36F0E0C272C110800E07678 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36F0E18272C110C00E07678 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E36F0E21272C110C00E07678 /* WTest_Gabriel_TondinTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E36F0E22272C110C00E07678 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E36F0E2B272C110C00E07678 /* WTest_Gabriel_TondinUITests.swift in Sources */,
+				E36F0E2D272C110C00E07678 /* WTest_Gabriel_TondinUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E36F0E1E272C110C00E07678 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E36F0E05272C110800E07678 /* WTest_Gabriel_Tondin */;
+			targetProxy = E36F0E1D272C110C00E07678 /* PBXContainerItemProxy */;
+		};
+		E36F0E28272C110C00E07678 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E36F0E05272C110800E07678 /* WTest_Gabriel_Tondin */;
+			targetProxy = E36F0E27272C110C00E07678 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E36F0E0F272C110800E07678 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E36F0E10272C110800E07678 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E36F0E14272C110B00E07678 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E36F0E15272C110B00E07678 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E36F0E2E272C110C00E07678 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E36F0E2F272C110C00E07678 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E36F0E31272C110C00E07678 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U6XHF933CK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WTest_Gabriel_Tondin/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tondin.WTest-Gabriel-Tondin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E36F0E32272C110C00E07678 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U6XHF933CK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WTest_Gabriel_Tondin/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tondin.WTest-Gabriel-Tondin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E36F0E34272C110C00E07678 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U6XHF933CK;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tondin.WTest-Gabriel-TondinTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WTest_Gabriel_Tondin.app/WTest_Gabriel_Tondin";
+			};
+			name = Debug;
+		};
+		E36F0E35272C110C00E07678 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U6XHF933CK;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tondin.WTest-Gabriel-TondinTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WTest_Gabriel_Tondin.app/WTest_Gabriel_Tondin";
+			};
+			name = Release;
+		};
+		E36F0E37272C110C00E07678 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U6XHF933CK;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tondin.WTest-Gabriel-TondinUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WTest_Gabriel_Tondin;
+			};
+			name = Debug;
+		};
+		E36F0E38272C110C00E07678 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U6XHF933CK;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tondin.WTest-Gabriel-TondinUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WTest_Gabriel_Tondin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E36F0E01272C110800E07678 /* Build configuration list for PBXProject "WTest_Gabriel_Tondin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E36F0E2E272C110C00E07678 /* Debug */,
+				E36F0E2F272C110C00E07678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E36F0E30272C110C00E07678 /* Build configuration list for PBXNativeTarget "WTest_Gabriel_Tondin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E36F0E31272C110C00E07678 /* Debug */,
+				E36F0E32272C110C00E07678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E36F0E33272C110C00E07678 /* Build configuration list for PBXNativeTarget "WTest_Gabriel_TondinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E36F0E34272C110C00E07678 /* Debug */,
+				E36F0E35272C110C00E07678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E36F0E36272C110C00E07678 /* Build configuration list for PBXNativeTarget "WTest_Gabriel_TondinUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E36F0E37272C110C00E07678 /* Debug */,
+				E36F0E38272C110C00E07678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E36F0DFE272C110800E07678 /* Project object */;
+}
