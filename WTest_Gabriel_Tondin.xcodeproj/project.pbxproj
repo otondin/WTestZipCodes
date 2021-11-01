@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		E36F0E0A272C110800E07678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E09272C110800E07678 /* AppDelegate.swift */; };
 		E36F0E0C272C110800E07678 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E0B272C110800E07678 /* SceneDelegate.swift */; };
-		E36F0E0E272C110800E07678 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E0D272C110800E07678 /* ViewController.swift */; };
-		E36F0E11272C110800E07678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36F0E0F272C110800E07678 /* Main.storyboard */; };
+		E36F0E0E272C110800E07678 /* ZipCodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E0D272C110800E07678 /* ZipCodeListViewController.swift */; };
 		E36F0E13272C110B00E07678 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36F0E12272C110B00E07678 /* Assets.xcassets */; };
 		E36F0E16272C110B00E07678 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36F0E14272C110B00E07678 /* LaunchScreen.storyboard */; };
 		E36F0E21272C110C00E07678 /* WTest_Gabriel_TondinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E20272C110C00E07678 /* WTest_Gabriel_TondinTests.swift */; };
 		E36F0E2B272C110C00E07678 /* WTest_Gabriel_TondinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E2A272C110C00E07678 /* WTest_Gabriel_TondinUITests.swift */; };
 		E36F0E2D272C110C00E07678 /* WTest_Gabriel_TondinUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E2C272C110C00E07678 /* WTest_Gabriel_TondinUITestsLaunchTests.swift */; };
+		E36F0E40272C115400E07678 /* ZipCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E3F272C115400E07678 /* ZipCodeService.swift */; };
+		E36F0E42272C116C00E07678 /* ZipCodeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E41272C116C00E07678 /* ZipCodeListViewModel.swift */; };
+		E36F0E46272C11BD00E07678 /* ZipCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E45272C11BD00E07678 /* ZipCodeModel.swift */; };
+		E36F0E48272C4C6200E07678 /* ZipCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E47272C4C6200E07678 /* ZipCodeTableViewCell.swift */; };
+		E36F0E4D272C63A100E07678 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E4C272C63A100E07678 /* Array.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +43,7 @@
 		E36F0E06272C110800E07678 /* WTest_Gabriel_Tondin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTest_Gabriel_Tondin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36F0E09272C110800E07678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E36F0E0B272C110800E07678 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E36F0E0D272C110800E07678 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E36F0E10272C110800E07678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E36F0E0D272C110800E07678 /* ZipCodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeListViewController.swift; sourceTree = "<group>"; };
 		E36F0E12272C110B00E07678 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E36F0E15272C110B00E07678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E36F0E17272C110B00E07678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +52,11 @@
 		E36F0E26272C110C00E07678 /* WTest_Gabriel_TondinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTest_Gabriel_TondinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36F0E2A272C110C00E07678 /* WTest_Gabriel_TondinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTest_Gabriel_TondinUITests.swift; sourceTree = "<group>"; };
 		E36F0E2C272C110C00E07678 /* WTest_Gabriel_TondinUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTest_Gabriel_TondinUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E36F0E3F272C115400E07678 /* ZipCodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeService.swift; sourceTree = "<group>"; };
+		E36F0E41272C116C00E07678 /* ZipCodeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeListViewModel.swift; sourceTree = "<group>"; };
+		E36F0E45272C11BD00E07678 /* ZipCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeModel.swift; sourceTree = "<group>"; };
+		E36F0E47272C4C6200E07678 /* ZipCodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeTableViewCell.swift; sourceTree = "<group>"; };
+		E36F0E4C272C63A100E07678 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +84,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D5330243378A3DAB880774A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E36F0DFD272C110800E07678 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +98,7 @@
 				E36F0E1F272C110C00E07678 /* WTest_Gabriel_TondinTests */,
 				E36F0E29272C110C00E07678 /* WTest_Gabriel_TondinUITests */,
 				E36F0E07272C110800E07678 /* Products */,
+				7D5330243378A3DAB880774A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +115,11 @@
 		E36F0E08272C110800E07678 /* WTest_Gabriel_Tondin */ = {
 			isa = PBXGroup;
 			children = (
+				E36F0E4B272C635B00E07678 /* Extensions */,
+				E36F0E3E272C114000E07678 /* Services */,
+				E36F0E39272C111300E07678 /* Scenes */,
 				E36F0E09272C110800E07678 /* AppDelegate.swift */,
 				E36F0E0B272C110800E07678 /* SceneDelegate.swift */,
-				E36F0E0D272C110800E07678 /* ViewController.swift */,
-				E36F0E0F272C110800E07678 /* Main.storyboard */,
 				E36F0E12272C110B00E07678 /* Assets.xcassets */,
 				E36F0E14272C110B00E07678 /* LaunchScreen.storyboard */,
 				E36F0E17272C110B00E07678 /* Info.plist */,
@@ -125,6 +142,65 @@
 				E36F0E2C272C110C00E07678 /* WTest_Gabriel_TondinUITestsLaunchTests.swift */,
 			);
 			path = WTest_Gabriel_TondinUITests;
+			sourceTree = "<group>";
+		};
+		E36F0E39272C111300E07678 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E36F0E3A272C111E00E07678 /* ZipCodeList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E36F0E3A272C111E00E07678 /* ZipCodeList */ = {
+			isa = PBXGroup;
+			children = (
+				E36F0E3D272C113600E07678 /* ViewModel */,
+				E36F0E3C272C113100E07678 /* View */,
+				E36F0E3B272C112900E07678 /* Model */,
+			);
+			path = ZipCodeList;
+			sourceTree = "<group>";
+		};
+		E36F0E3B272C112900E07678 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E36F0E45272C11BD00E07678 /* ZipCodeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E36F0E3C272C113100E07678 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E36F0E0D272C110800E07678 /* ZipCodeListViewController.swift */,
+				E36F0E47272C4C6200E07678 /* ZipCodeTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E36F0E3D272C113600E07678 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E36F0E41272C116C00E07678 /* ZipCodeListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E36F0E3E272C114000E07678 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E36F0E3F272C115400E07678 /* ZipCodeService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E36F0E4B272C635B00E07678 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E36F0E4C272C63A100E07678 /* Array.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +309,6 @@
 			files = (
 				E36F0E16272C110B00E07678 /* LaunchScreen.storyboard in Resources */,
 				E36F0E13272C110B00E07678 /* Assets.xcassets in Resources */,
-				E36F0E11272C110800E07678 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +333,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E36F0E0E272C110800E07678 /* ViewController.swift in Sources */,
+				E36F0E48272C4C6200E07678 /* ZipCodeTableViewCell.swift in Sources */,
+				E36F0E0E272C110800E07678 /* ZipCodeListViewController.swift in Sources */,
 				E36F0E0A272C110800E07678 /* AppDelegate.swift in Sources */,
+				E36F0E46272C11BD00E07678 /* ZipCodeModel.swift in Sources */,
+				E36F0E40272C115400E07678 /* ZipCodeService.swift in Sources */,
+				E36F0E4D272C63A100E07678 /* Array.swift in Sources */,
 				E36F0E0C272C110800E07678 /* SceneDelegate.swift in Sources */,
+				E36F0E42272C116C00E07678 /* ZipCodeListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +377,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E36F0E0F272C110800E07678 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E36F0E10272C110800E07678 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E36F0E14272C110B00E07678 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -367,7 +439,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -422,7 +494,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -444,7 +516,6 @@
 				INFOPLIST_FILE = WTest_Gabriel_Tondin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,7 +543,6 @@
 				INFOPLIST_FILE = WTest_Gabriel_Tondin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
