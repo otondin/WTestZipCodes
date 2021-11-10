@@ -21,9 +21,11 @@ class ZipCodeListViewController: UITableViewController {
         return searchController
     }()
     private lazy var activityIndicator: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView(style: .medium)
-        view.translatesAutoresizingMaskIntoConstraints = false
+        let view = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         return view
+    }()
+    private lazy var refreshButton: UIBarButtonItem  = {
+        UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(fetchZipCodes))
     }()
     
     private var isSearchBarEmpty: Bool {
@@ -37,7 +39,7 @@ class ZipCodeListViewController: UITableViewController {
     }
 
     override init(style: UITableView.Style) {
-        self.viewModel = ZipCodeListViewModel() // use a dependency injection aproach
+        self.viewModel = ZipCodeListViewModel()
         super.init(style: style)
     }
     
@@ -56,24 +58,27 @@ class ZipCodeListViewController: UITableViewController {
 private extension ZipCodeListViewController {
     func setupViews() {
         view.addSubview(activityIndicator)
-        activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
     func configure() {
         title = "Códigos Postais"
         tableView.register(ZipCodeTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(fetchZipCodes))
+        navigationItem.rightBarButtonItem = refreshButton
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
     
     @objc func fetchZipCodes() {
+        view.isUserInteractionEnabled = false
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: activityIndicator)
         activityIndicator.startAnimating()
         DispatchQueue.global(qos: .background).async { [weak self] in
             self?.viewModel.fetchAllZipCodes() { result in
                 guard let result = result else {
                     self?.activityIndicator.stopAnimating()
+                    self?.view.isUserInteractionEnabled = true
+                    self?.activityIndicator.removeFromSuperview()
+                    self?.navigationItem.rightBarButtonItem = self?.refreshButton
                     return
                     
                 }
@@ -81,6 +86,9 @@ private extension ZipCodeListViewController {
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
                     self?.activityIndicator.stopAnimating()
+                    self?.view.isUserInteractionEnabled = true
+                    self?.activityIndicator.removeFromSuperview()
+                    self?.navigationItem.rightBarButtonItem = self?.refreshButton
                 }
             }
         }
@@ -123,3 +131,4 @@ extension ZipCodeListViewController: UISearchResultsUpdating {
         }
     }
 }
+
