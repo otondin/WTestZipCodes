@@ -3,7 +3,7 @@ An iOS challenge project.
 
 ### Requirements
 
-- Compatible with Xcode 12+
+- Compatible with Xcode 13+
 - iOS Deployment Target 13+
 
 
