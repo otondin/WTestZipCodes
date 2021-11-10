@@ -27,6 +27,10 @@ class ZipCodeListViewController: UITableViewController {
         let view = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         return view
     }()
+    private lazy var activityButton: UIBarButtonItem = {
+        let view = UIBarButtonItem(customView: activityIndicator)
+        return view
+    }()
     private lazy var refreshButton: UIBarButtonItem  = {
         UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(fetchData))
     }()
@@ -73,8 +77,7 @@ private extension ZipCodeListViewController {
     }
     
     @objc func fetchData() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: activityIndicator)
-        activityIndicator.startAnimating()
+        updateUI()
         DispatchQueue.global(qos: .background).async { [weak self] in
             self?.viewModel.fetchData(items: 50)
         }
@@ -86,7 +89,19 @@ private extension ZipCodeListViewController {
     }
     
     func updateUI() {
-        tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            if let activityIndicator = self?.activityIndicator {
+                if activityIndicator.isAnimating {
+                    self?.activityIndicator.stopAnimating()
+                    self?.navigationItem.rightBarButtonItem = self?.refreshButton
+                    self?.tableView.reloadData()
+                } else {
+                    self?.activityIndicator.startAnimating()
+                    self?.navigationItem.rightBarButtonItem = self?.activityButton
+                }
+            }
+        }
+        
     }
 }
 
@@ -141,11 +156,5 @@ extension ZipCodeListViewController: ZipCodeListViewModelOutput {
     
     func pull(data: [ZipCodeModel]) {
         zipCodes = data
-        DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadData()
-            self?.activityIndicator.stopAnimating()
-            self?.activityIndicator.removeFromSuperview()
-            self?.navigationItem.rightBarButtonItem = self?.refreshButton
-        }
     }
 }
