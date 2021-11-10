@@ -15,7 +15,7 @@
 		E36F0E21272C110C00E07678 /* WTest_Gabriel_TondinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E20272C110C00E07678 /* WTest_Gabriel_TondinTests.swift */; };
 		E36F0E2B272C110C00E07678 /* WTest_Gabriel_TondinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E2A272C110C00E07678 /* WTest_Gabriel_TondinUITests.swift */; };
 		E36F0E2D272C110C00E07678 /* WTest_Gabriel_TondinUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E2C272C110C00E07678 /* WTest_Gabriel_TondinUITestsLaunchTests.swift */; };
-		E36F0E40272C115400E07678 /* ZipCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E3F272C115400E07678 /* ZipCodeService.swift */; };
+		E36F0E40272C115400E07678 /* ZipCodesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E3F272C115400E07678 /* ZipCodesService.swift */; };
 		E36F0E42272C116C00E07678 /* ZipCodeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E41272C116C00E07678 /* ZipCodeListViewModel.swift */; };
 		E36F0E46272C11BD00E07678 /* ZipCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E45272C11BD00E07678 /* ZipCodeModel.swift */; };
 		E36F0E48272C4C6200E07678 /* ZipCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F0E47272C4C6200E07678 /* ZipCodeTableViewCell.swift */; };
@@ -52,7 +52,7 @@
 		E36F0E26272C110C00E07678 /* WTest_Gabriel_TondinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTest_Gabriel_TondinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36F0E2A272C110C00E07678 /* WTest_Gabriel_TondinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTest_Gabriel_TondinUITests.swift; sourceTree = "<group>"; };
 		E36F0E2C272C110C00E07678 /* WTest_Gabriel_TondinUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTest_Gabriel_TondinUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		E36F0E3F272C115400E07678 /* ZipCodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeService.swift; sourceTree = "<group>"; };
+		E36F0E3F272C115400E07678 /* ZipCodesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodesService.swift; sourceTree = "<group>"; };
 		E36F0E41272C116C00E07678 /* ZipCodeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeListViewModel.swift; sourceTree = "<group>"; };
 		E36F0E45272C11BD00E07678 /* ZipCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeModel.swift; sourceTree = "<group>"; };
 		E36F0E47272C4C6200E07678 /* ZipCodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeTableViewCell.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 		E36F0E3E272C114000E07678 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				E36F0E3F272C115400E07678 /* ZipCodeService.swift */,
+				E36F0E3F272C115400E07678 /* ZipCodesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -329,7 +329,7 @@
 				E36F0E0E272C110800E07678 /* ZipCodeListViewController.swift in Sources */,
 				E36F0E0A272C110800E07678 /* AppDelegate.swift in Sources */,
 				E36F0E46272C11BD00E07678 /* ZipCodeModel.swift in Sources */,
-				E36F0E40272C115400E07678 /* ZipCodeService.swift in Sources */,
+				E36F0E40272C115400E07678 /* ZipCodesService.swift in Sources */,
 				E36F0E4D272C63A100E07678 /* Array.swift in Sources */,
 				E36F0E0C272C110800E07678 /* SceneDelegate.swift in Sources */,
 				E36F0E42272C116C00E07678 /* ZipCodeListViewModel.swift in Sources */,

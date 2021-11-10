@@ -8,10 +8,13 @@
 import UIKit
 
 class ZipCodeListViewController: UITableViewController {
-    
     private var viewModel: ZipCodeListViewModel
     private let cellIdentifier = "zipCodeCell"
-    private var zipCodes = [ZipCodeModel]()
+    private var zipCodes = [ZipCodeModel]() {
+        didSet {
+            updateUI()
+        }
+    }
     private var filteredZipCodes = [ZipCodeModel]()
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -25,7 +28,7 @@ class ZipCodeListViewController: UITableViewController {
         return view
     }()
     private lazy var refreshButton: UIBarButtonItem  = {
-        UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(fetchZipCodes))
+        UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(fetchData))
     }()
     
     private var isSearchBarEmpty: Bool {
@@ -51,7 +54,7 @@ class ZipCodeListViewController: UITableViewController {
         super.viewDidLoad()
         setupViews()
         configure()
-        fetchZipCodes()
+        fetchData()
     }
 }
 
@@ -69,33 +72,20 @@ private extension ZipCodeListViewController {
         viewModel.delegate = self
     }
     
-    @objc func fetchZipCodes() {
-        view.isUserInteractionEnabled = false
+    @objc func fetchData() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: activityIndicator)
         activityIndicator.startAnimating()
         DispatchQueue.global(qos: .background).async { [weak self] in
-            self?.viewModel.fetchAllZipCodes() { result in
-                if let result = result {
-                    self?.zipCodes.append(contentsOf: result)
-                    DispatchQueue.main.async {
-                        self?.tableView.reloadData()
-                        self?.activityIndicator.stopAnimating()
-                        self?.activityIndicator.removeFromSuperview()
-                        self?.navigationItem.rightBarButtonItem = self?.refreshButton
-                    }
-                } else {
-                    DispatchQueue.main.async {
-                        self?.activityIndicator.stopAnimating()
-                        self?.activityIndicator.removeFromSuperview()
-                        self?.navigationItem.rightBarButtonItem = self?.refreshButton
-                    }
-                }
-            }
+            self?.viewModel.fetchData(items: 50)
         }
     }
     
     func filterContentForSearchText(_ searchText: String) {
         filteredZipCodes = zipCodes.filter { $0.getCodPostal().contains(searchText) || $0.desigPostal.lowercased().contains(searchText.lowercased()) }
+        tableView.reloadData()
+    }
+    
+    func updateUI() {
         tableView.reloadData()
     }
 }
@@ -135,15 +125,27 @@ extension ZipCodeListViewController: UISearchResultsUpdating {
 extension ZipCodeListViewController: ZipCodeListViewModelOutput {
     func showError(with message: String) {
         DispatchQueue.main.async { [weak self] in
-            let alert = UIAlertController(title: "Ooops", message: message, preferredStyle: .alert)
+            self?.activityIndicator.stopAnimating()
+            self?.activityIndicator.removeFromSuperview()
+            self?.navigationItem.rightBarButtonItem = self?.refreshButton
+            let alert = UIAlertController(title: "Ooops!", message: message, preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             let retryAction = UIAlertAction(title: "Retry", style: .default) { _ in
-                self?.fetchZipCodes()
+                self?.fetchData()
             }
             alert.addAction(defaultAction)
             alert.addAction(retryAction)
             self?.present(alert, animated: true, completion: nil)
         }
     }
+    
+    func pull(data: [ZipCodeModel]) {
+        zipCodes = data
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+            self?.activityIndicator.stopAnimating()
+            self?.activityIndicator.removeFromSuperview()
+            self?.navigationItem.rightBarButtonItem = self?.refreshButton
+        }
+    }
 }
-
