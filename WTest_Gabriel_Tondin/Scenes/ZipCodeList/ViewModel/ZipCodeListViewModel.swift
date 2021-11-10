@@ -17,7 +17,7 @@ class ZipCodeListViewModel {
 
 extension ZipCodeListViewModel: ZipCodeListViewModelDelegate {
     func fetchAllZipCodes(completion: @escaping ([ZipCodeModel]?) -> Void) {
-        service.fetch(items: 300) { result in
+        service.fetch(items: 50) { result in
             switch result {
             case .failure(let error):
                 print(error.localizedDescription)

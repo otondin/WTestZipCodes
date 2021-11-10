@@ -9,10 +9,8 @@ import Foundation
 
 enum ZipCodeServiceError: Error {
     case invalidURL
-    case noData
     case noResponse
-    case onReadingData
-    case onDecodingData
+    case noData
 }
 
 typealias ZipCodesServicesHandler = Result<[ZipCodeModel], ZipCodeServiceError>
@@ -24,9 +22,7 @@ struct ZipCodesService {
     
     func fetch(items: Int, completionHandler: @escaping (ZipCodesServicesHandler) -> Void) {
         if let zipCodeFileURL = repository.url(forKey: "zipCodes") {
-            do {
-                let content = try String(contentsOf: zipCodeFileURL, encoding: .utf8)
-                let parsedCSV: [String] = content.components(separatedBy: "\n")
+            if let parsedCSV = parseCSV(from: zipCodeFileURL) {
                 var zipCodes = [ZipCodeModel]()
                 for i in 0..<items {
                     guard i > 0 else { continue }
@@ -35,8 +31,8 @@ struct ZipCodesService {
                     zipCodes.append(zipCode)
                 }
                 completionHandler(.success(zipCodes))
-            } catch {
-                completionHandler(.failure(.onReadingData))
+            } else {
+                completionHandler(.failure(.noData))
             }
         } else {
             guard let url = URL(string: endpoint) else {
@@ -54,22 +50,33 @@ struct ZipCodesService {
                     return
                 }
                 repository.set(url, forKey: "zipCodes")
-                do {
-                    let content = try String(contentsOf: url, encoding: .utf8)
-                    let parsedCSV: [String] = content.components(separatedBy: "\n")
+            
+                if let parsedCSV = parseCSV(from: url) {
                     var zipCodes = [ZipCodeModel]()
-                    for i in 0..<parsedCSV.count {
+                    for i in 0..<items {
                         guard i > 0 else { continue }
                         let item = parsedCSV[i].components(separatedBy: ",")
                         let zipCode = ZipCodeModel(numCodPostal: item[14], extCodPostal: item[15], desigPostal: item[16])
                         zipCodes.append(zipCode)
                     }
                     completionHandler(.success(zipCodes))
-                } catch {
-                    completionHandler(.failure(.onReadingData))
+                } else {
+                    completionHandler(.failure(.noData))
                 }
             }
             task.resume()
+        }
+    }
+}
+
+private extension ZipCodesService {
+    func parseCSV(from url: URL) -> [String]? {
+        do {
+            let content = try String(contentsOf: url, encoding: .utf8)
+            let parsedCSV: [String] = content.components(separatedBy: "\n")
+            return parsedCSV
+        } catch {
+            return nil
         }
     }
 }
