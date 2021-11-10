@@ -15,7 +15,7 @@ An iOS challenge project made with MVVM design pattern.
 
 ### Notes
 
-- The project is hardcoded to just show 50 zip codes on ZipCodeList scene
+- The project is, for now, hardcoded to just show 100 zip codes on list
 - This project doesn't uses any external or third-party dependency
 
 ### To-Do issues
