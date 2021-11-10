@@ -1,5 +1,5 @@
 # WTestZipCodes
-An iOS challenge project.
+An iOS challenge project made with MVVM design pattern.
 
 ### Requirements
 
@@ -12,4 +12,14 @@ An iOS challenge project.
 - Open the project file
 - Click run!
 
-**This project doesn't uses any external or third-party dependency.**
+
+### Notes
+
+- The project is hardcoded to just show 50 zip codes on ZipCodeList scene
+- This project doesn't uses any external or third-party dependency
+
+### To-Do issues
+- [ ] Implementing pagination on ZipCodeListViewController to zip codes
+- [ ] Handling errors with humanized messages
+- [ ] Adding Unit test to ZipCodeService component
+- [ ] Adding Unit teste to ZipCodeViewModel component
