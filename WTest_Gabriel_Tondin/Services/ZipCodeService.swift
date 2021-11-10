@@ -21,7 +21,7 @@ struct ZipCodesService {
     private let session = URLSession.shared
     
     func fetch(items: Int, completionHandler: @escaping (ZipCodesServicesHandler) -> Void) {
-        if let zipCodeFileURL = repository.url(forKey: "zipCodes") {
+        if let zipCodeFileURL = repository.url(forKey: "zipCodesFile") {
             if let parsedCSV = parseCSV(from: zipCodeFileURL) {
                 var zipCodes = [ZipCodeModel]()
                 for i in 0..<items {
@@ -49,8 +49,7 @@ struct ZipCodesService {
                     completionHandler(.failure(.noData))
                     return
                 }
-                repository.set(url, forKey: "zipCodes")
-            
+                repository.set(url, forKey: "zipCodesFile")
                 if let parsedCSV = parseCSV(from: url) {
                     var zipCodes = [ZipCodeModel]()
                     for i in 0..<items {

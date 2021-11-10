@@ -9,7 +9,7 @@ import UIKit
 
 class ZipCodeListViewController: UITableViewController {
     
-    private let viewModel: ZipCodeListViewModelDelegate
+    private var viewModel: ZipCodeListViewModel
     private let cellIdentifier = "zipCodeCell"
     private var zipCodes = [ZipCodeModel]()
     private var filteredZipCodes = [ZipCodeModel]()
@@ -66,6 +66,7 @@ private extension ZipCodeListViewController {
         navigationItem.rightBarButtonItem = refreshButton
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        viewModel.delegate = self
     }
     
     @objc func fetchZipCodes() {
@@ -74,21 +75,20 @@ private extension ZipCodeListViewController {
         activityIndicator.startAnimating()
         DispatchQueue.global(qos: .background).async { [weak self] in
             self?.viewModel.fetchAllZipCodes() { result in
-                guard let result = result else {
-                    self?.activityIndicator.stopAnimating()
-                    self?.view.isUserInteractionEnabled = true
-                    self?.activityIndicator.removeFromSuperview()
-                    self?.navigationItem.rightBarButtonItem = self?.refreshButton
-                    return
-                    
-                }
-                self?.zipCodes.append(contentsOf: result)
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                    self?.activityIndicator.stopAnimating()
-                    self?.view.isUserInteractionEnabled = true
-                    self?.activityIndicator.removeFromSuperview()
-                    self?.navigationItem.rightBarButtonItem = self?.refreshButton
+                if let result = result {
+                    self?.zipCodes.append(contentsOf: result)
+                    DispatchQueue.main.async {
+                        self?.tableView.reloadData()
+                        self?.activityIndicator.stopAnimating()
+                        self?.activityIndicator.removeFromSuperview()
+                        self?.navigationItem.rightBarButtonItem = self?.refreshButton
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self?.activityIndicator.stopAnimating()
+                        self?.activityIndicator.removeFromSuperview()
+                        self?.navigationItem.rightBarButtonItem = self?.refreshButton
+                    }
                 }
             }
         }
@@ -128,6 +128,17 @@ extension ZipCodeListViewController: UISearchResultsUpdating {
         let searchBar = searchController.searchBar
         if let text = searchBar.text {
             filterContentForSearchText(text)
+        }
+    }
+}
+
+extension ZipCodeListViewController: ZipCodeListViewModelOutput {
+    func showErrorMessage(with message: String) {
+        DispatchQueue.main.async { [weak self] in
+            let alert = UIAlertController(title: "Ooops", message: message, preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(action)
+            self?.present(alert, animated: true, completion: nil)
         }
     }
 }

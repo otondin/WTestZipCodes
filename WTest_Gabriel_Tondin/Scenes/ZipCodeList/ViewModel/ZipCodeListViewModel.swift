@@ -7,20 +7,27 @@
 
 import Foundation
 
-protocol ZipCodeListViewModelDelegate {
+protocol ZipCodeListViewModelProtocol {
     func fetchAllZipCodes(completion: @escaping ([ZipCodeModel]?) -> Void)
+}
+
+protocol ZipCodeListViewModelOutput {
+    func showErrorMessage(with message: String)
 }
 
 class ZipCodeListViewModel {
     private let service = ZipCodesService()
+    var delegate: ZipCodeListViewModelOutput?
+    
+    public init() {}
 }
 
-extension ZipCodeListViewModel: ZipCodeListViewModelDelegate {
+extension ZipCodeListViewModel: ZipCodeListViewModelProtocol {
     func fetchAllZipCodes(completion: @escaping ([ZipCodeModel]?) -> Void) {
-        service.fetch(items: 50) { result in
+        service.fetch(items: 50) { [weak self] result in
             switch result {
             case .failure(let error):
-                print(error.localizedDescription)
+                self?.delegate?.showErrorMessage(with: error.localizedDescription)
                 completion(nil)
             case .success(let data):
                 completion(data)
