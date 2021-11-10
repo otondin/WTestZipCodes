@@ -133,11 +133,15 @@ extension ZipCodeListViewController: UISearchResultsUpdating {
 }
 
 extension ZipCodeListViewController: ZipCodeListViewModelOutput {
-    func showErrorMessage(with message: String) {
+    func showError(with message: String) {
         DispatchQueue.main.async { [weak self] in
             let alert = UIAlertController(title: "Ooops", message: message, preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(action)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let retryAction = UIAlertAction(title: "Retry", style: .default) { _ in
+                self?.fetchZipCodes()
+            }
+            alert.addAction(defaultAction)
+            alert.addAction(retryAction)
             self?.present(alert, animated: true, completion: nil)
         }
     }

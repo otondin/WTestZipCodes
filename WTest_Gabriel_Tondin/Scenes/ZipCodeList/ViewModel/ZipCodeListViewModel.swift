@@ -12,7 +12,7 @@ protocol ZipCodeListViewModelProtocol {
 }
 
 protocol ZipCodeListViewModelOutput {
-    func showErrorMessage(with message: String)
+    func showError(with message: String)
 }
 
 class ZipCodeListViewModel {
@@ -27,7 +27,7 @@ extension ZipCodeListViewModel: ZipCodeListViewModelProtocol {
         service.fetch(items: 50) { [weak self] result in
             switch result {
             case .failure(let error):
-                self?.delegate?.showErrorMessage(with: error.localizedDescription)
+                self?.delegate?.showError(with: error.localizedDescription)
                 completion(nil)
             case .success(let data):
                 completion(data)
