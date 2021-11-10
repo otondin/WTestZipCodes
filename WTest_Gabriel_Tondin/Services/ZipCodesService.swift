@@ -20,9 +20,9 @@ class ZipCodesService {
     private let session = URLSession.shared
     private let endpoint = "https://raw.githubusercontent.com/centraldedados/codigos_postais/master/data/codigos_postais.csv"
     
-    func fetchZipCodes(items: Int, completionHandler: @escaping (ZipCodesServicesHandler) -> Void) {
+    func fetchZipCodes(with items: Int, completionHandler: @escaping (ZipCodesServicesHandler) -> Void) {
         if let zipCodeFileURL = repository.url(forKey: "zipCodes") {
-            if let parsedCSV = parseCSV(from: zipCodeFileURL) {
+            if let parsedCSV = parseCSV(from: zipCodeFileURL, with: items) {
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: parsedCSV, options: .prettyPrinted)
                     let zipCodes = try JSONDecoder().decode([ZipCodeModel].self, from: jsonData)
@@ -48,7 +48,7 @@ class ZipCodesService {
                     return
                 }
                 self.repository.set(url, forKey: "zipCodes")
-                if let parsedCSV = self.parseCSV(from: url) {
+                if let parsedCSV = self.parseCSV(from: url, with: items) {
                     do {
                         let jsonData = try JSONSerialization.data(withJSONObject: parsedCSV, options: .prettyPrinted)
                         let zipCodes = try JSONDecoder().decode([ZipCodeModel].self, from: jsonData)
@@ -66,14 +66,13 @@ class ZipCodesService {
 }
 
 private extension ZipCodesService {
-    func parseCSV(from url: URL) -> [[String: String]]? {
+    func parseCSV(from url: URL, with items: Int) -> [[String: String]]? {
         do {
             let content = try String(contentsOf: url, encoding: .utf8)
             let lines = content.components(separatedBy: "\n")
             let columnNames = lines[0].components(separatedBy: ",")
             var results = [[String: String]]()
-//            for line in lines[1..<lines.count] {
-            for line in lines[1...100] {
+            for line in lines[1...items] {
                 let fieldValues = line.components(separatedBy: ",")
                 var result = [String: String]()
                 for i in 0..<fieldValues.count {

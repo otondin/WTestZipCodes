@@ -79,7 +79,7 @@ private extension ZipCodeListViewController {
     @objc func fetchData() {
         updateUI()
         DispatchQueue.global(qos: .background).async { [weak self] in
-            self?.viewModel.fetchData(items: 50)
+            self?.viewModel.fetchData()
         }
     }
     

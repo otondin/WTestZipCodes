@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ZipCodeListViewModelInput {
-    func fetchData(items: Int)
+    func fetchData()
 }
 
 protocol ZipCodeListViewModelOutput {
@@ -21,8 +21,8 @@ class ZipCodeListViewModel {
 }
 
 extension ZipCodeListViewModel: ZipCodeListViewModelInput {
-    func fetchData(items: Int) {
-        ZipCodesService().fetchZipCodes(items: items) { [weak self] result in
+    func fetchData() {
+        ZipCodesService().fetchZipCodes(with: 100) { [weak self] result in
             switch result {
             case .failure(let error):
                 self?.delegate?.showError(with: error.localizedDescription)
