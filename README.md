@@ -1,5 +1,5 @@
 # WTestZipCodes
-An iOS challenge project made with MVVM design pattern.
+An iOS challenge project built using MVVM design pattern.
 
 ### Requirements
 
