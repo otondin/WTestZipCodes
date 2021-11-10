@@ -12,6 +12,7 @@ class ZipCodeListViewController: UITableViewController {
     private let viewModel: ZipCodeListViewModelDelegate
     private let cellIdentifier = "zipCodeCell"
     private var zipCodes = [ZipCodeModel]()
+    private var filteredZipCodes = [ZipCodeModel]()
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
@@ -24,6 +25,16 @@ class ZipCodeListViewController: UITableViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    private var isSearchBarEmpty: Bool {
+        searchController.searchBar.text?.isEmpty ?? true
+    }
+    private var isLoading: Bool {
+        searchController.isActive && !isSearchBarEmpty
+    }
+    private var isFiltering: Bool {
+        searchController.isActive && !isSearchBarEmpty
+    }
 
     override init(style: UITableView.Style) {
         self.viewModel = ZipCodeListViewModel() // use a dependency injection aproach
@@ -74,25 +85,41 @@ private extension ZipCodeListViewController {
             }
         }
     }
+    
+    func filterContentForSearchText(_ searchText: String) {
+        filteredZipCodes = zipCodes.filter { $0.getCodPostal().contains(searchText) || $0.desigPostal.lowercased().contains(searchText.lowercased()) }
+        tableView.reloadData()
+    }
 }
 
 extension ZipCodeListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return zipCodes.count
+        if isFiltering {
+            return filteredZipCodes.count
+        } else {
+            return zipCodes.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ZipCodeTableViewCell
-        let zipCode = zipCodes[indexPath.row]
-        cell.textLabel?.text = zipCode.numCodPostal ?? ""
-        cell.detailTextLabel?.text = zipCode.desigPostal ?? ""
+        let zipCode: ZipCodeModel
+        if isFiltering {
+            zipCode = filteredZipCodes[indexPath.row]
+        } else {
+            zipCode = zipCodes[indexPath.row]
+        }
+        cell.textLabel?.text = zipCode.getCodPostal()
+        cell.detailTextLabel?.text = zipCode.desigPostal
         return cell
     }
 }
 
 extension ZipCodeListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        // TODO: updates search here
+        let searchBar = searchController.searchBar
+        if let text = searchBar.text {
+            filterContentForSearchText(text)
+        }
     }
 }
-

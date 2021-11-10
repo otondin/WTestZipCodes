@@ -11,18 +11,19 @@ protocol ZipCodeListViewModelDelegate {
     func fetchAllZipCodes(completion: @escaping ([ZipCodeModel]?) -> Void)
 }
 
-class ZipCodeListViewModel { }
+class ZipCodeListViewModel {
+    private let service = ZipCodesService()
+}
 
 extension ZipCodeListViewModel: ZipCodeListViewModelDelegate {
     func fetchAllZipCodes(completion: @escaping ([ZipCodeModel]?) -> Void) {
-        ZipCodesService.fetch(items: 20) { result in
+        service.fetch(items: 300) { result in
             switch result {
             case .failure(let error):
                 print(error.localizedDescription)
                 completion(nil)
             case .success(let data):
-                print(data)
-                completion(ZipCodeModel.mock)
+                completion(data)
             }
         }
     }

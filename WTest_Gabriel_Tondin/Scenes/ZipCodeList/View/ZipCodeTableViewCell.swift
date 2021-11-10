@@ -7,4 +7,13 @@
 
 import UIKit
 
-class ZipCodeTableViewCell: UITableViewCell { }
+class ZipCodeTableViewCell: UITableViewCell {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
