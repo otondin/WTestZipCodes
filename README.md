@@ -22,7 +22,7 @@ An iOS challenge project made with MVVM design pattern.
 - [ ] Implementing pagination on ZipCodeListViewController to zip codes
 - [ ] Handling errors with humanized messages
 - [ ] Adding Unit test to ZipCodeService component
-- [ ] Adding Unit teste to ZipCodeViewModel component
+- [ ] Adding Unit test to ZipCodeViewModel component
 
 
 ### Screenshots
