@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - ZipCodeServiceError enum
+
 enum ZipCodeServiceError: Error {
     case invalidURL
     case noResponse
@@ -16,9 +18,14 @@ enum ZipCodeServiceError: Error {
 typealias ZipCodesServicesHandler = Result<[ZipCodeModel], ZipCodeServiceError>
 
 class ZipCodesService {
+    
+    // MARK:- Private properties
+
     private let repository = UserDefaults.standard
     private let session = URLSession.shared
     private let endpoint = "https://raw.githubusercontent.com/centraldedados/codigos_postais/master/data/codigos_postais.csv"
+    
+    // MARK:- Public instance methods
     
     func fetchZipCodes(with items: Int, completionHandler: @escaping (ZipCodesServicesHandler) -> Void) {
         if let zipCodeFileURL = repository.url(forKey: "zipCodes") {
@@ -64,6 +71,8 @@ class ZipCodesService {
         }
     }
 }
+
+// MARK: - Private extension
 
 private extension ZipCodesService {
     func parseCSV(from url: URL, with items: Int) -> [[String: String]]? {

@@ -8,8 +8,10 @@
 import UIKit
 
 class ZipCodeListViewController: UITableViewController {
+    
+    // MARK:- Private properties
+    
     private var viewModel: ZipCodeListViewModel
-    private let cellIdentifier = "zipCodeCell"
     private var zipCodes = [ZipCodeModel]() {
         didSet {
             updateUI()
@@ -34,7 +36,6 @@ class ZipCodeListViewController: UITableViewController {
     private lazy var refreshButton: UIBarButtonItem  = {
         UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(fetchData))
     }()
-    
     private var isSearchBarEmpty: Bool {
         searchController.searchBar.text?.isEmpty ?? true
     }
@@ -44,6 +45,9 @@ class ZipCodeListViewController: UITableViewController {
     private var isFiltering: Bool {
         searchController.isActive && !isSearchBarEmpty
     }
+    private let cellIdentifier = "zipCodeCell"
+    
+    // MARK:- Lyfecicle methods
 
     override init(style: UITableView.Style) {
         self.viewModel = ZipCodeListViewModel()
@@ -62,6 +66,7 @@ class ZipCodeListViewController: UITableViewController {
     }
 }
 
+// MARK:- Private extension
 private extension ZipCodeListViewController {
     func setupViews() {
         view.addSubview(activityIndicator)
@@ -105,6 +110,8 @@ private extension ZipCodeListViewController {
     }
 }
 
+// MARK:- UITableViewDataSource extension
+
 extension ZipCodeListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
@@ -128,6 +135,8 @@ extension ZipCodeListViewController {
     }
 }
 
+// MARK:- UISearchResultsUpdating extension
+
 extension ZipCodeListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
@@ -136,6 +145,8 @@ extension ZipCodeListViewController: UISearchResultsUpdating {
         }
     }
 }
+
+// MARK:- ZipCodeListViewModelOutput extension
 
 extension ZipCodeListViewController: ZipCodeListViewModelOutput {
     func showError(with message: String) {

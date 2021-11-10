@@ -7,9 +7,13 @@
 
 import Foundation
 
+// MARK:- ZipCodeListViewModelInput Protocol
+
 protocol ZipCodeListViewModelInput {
     func fetchData()
 }
+
+// MARK:- ZipCodeListViewModelOutput Protocol
 
 protocol ZipCodeListViewModelOutput {
     func showError(with message: String)
@@ -19,6 +23,8 @@ protocol ZipCodeListViewModelOutput {
 class ZipCodeListViewModel {
     var delegate: ZipCodeListViewModelOutput?
 }
+
+// MARK:- ZipCodeListViewModelOutput extension
 
 extension ZipCodeListViewModel: ZipCodeListViewModelInput {
     func fetchData() {

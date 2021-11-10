@@ -13,44 +13,14 @@ struct ZipCodeModel: Codable {
     let extCodPostal: String
     let desigPostal: String
     
+    func getCodPostal() -> String {
+        "\(numCodPostal)-\(extCodPostal)"
+    }
+    
     enum CodingKeys: String, CodingKey {
         case numCodPostal = "num_cod_postal"
         case extCodPostal = "ext_cod_postal"
         case desigPostal = "desig_postal"
     }
-    
-    func getCodPostal() -> String {
-        "\(numCodPostal)-\(extCodPostal)"
-    }
 }
 
-extension ZipCodeModel {
-    static let mock = [
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-        ZipCodeModel(numCodPostal: "2900", extCodPostal: "256", desigPostal: "Foobar"),
-    ]
-}
