@@ -63,7 +63,9 @@ class ZipCodesService {
             task.resume()
         }
     }
+}
 
+private extension ZipCodesService {
     func parseCSV(from url: URL) -> [[String: String]]? {
         do {
             let content = try String(contentsOf: url, encoding: .utf8)
