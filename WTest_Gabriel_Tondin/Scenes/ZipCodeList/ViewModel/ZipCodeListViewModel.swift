@@ -11,6 +11,7 @@ import Foundation
 
 protocol ZipCodeListViewModelInput {
     func fetchData()
+    func filter(with text: String) -> [ZipCodeModel]
 }
 
 // MARK:- ZipCodeListViewModelOutput Protocol
@@ -22,6 +23,7 @@ protocol ZipCodeListViewModelOutput {
 
 class ZipCodeListViewModel {
     var delegate: ZipCodeListViewModelOutput?
+    var zipCodes = [ZipCodeModel]()
 }
 
 // MARK:- ZipCodeListViewModelOutput extension
@@ -36,5 +38,9 @@ extension ZipCodeListViewModel: ZipCodeListViewModelInput {
                 self?.delegate?.pull(data: data)
             }
         }
+    }
+    
+    func filter(with text: String) -> [ZipCodeModel] {
+        zipCodes.filter { $0.getCodPostal().contains(text) || $0.desigPostal.lowercased().contains(text.lowercased()) }
     }
 }

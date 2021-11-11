@@ -12,11 +12,6 @@ class ZipCodeListViewController: UITableViewController {
     // MARK:- Private properties
     
     private var viewModel: ZipCodeListViewModel
-    private var zipCodes = [ZipCodeModel]() {
-        didSet {
-            updateUI()
-        }
-    }
     private var filteredZipCodes = [ZipCodeModel]()
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -89,8 +84,7 @@ private extension ZipCodeListViewController {
     }
     
     func filterContentForSearchText(_ searchText: String) {
-        filteredZipCodes = zipCodes.filter { $0.getCodPostal().contains(searchText) || $0.desigPostal.lowercased().contains(searchText.lowercased()) }
-        tableView.reloadData()
+        filteredZipCodes = viewModel.filter(with: searchText)
     }
     
     func updateUI() {
@@ -117,7 +111,7 @@ extension ZipCodeListViewController {
         if isFiltering {
             return filteredZipCodes.count
         } else {
-            return zipCodes.count
+            return viewModel.zipCodes.count
         }
     }
     
@@ -127,7 +121,7 @@ extension ZipCodeListViewController {
         if isFiltering {
             zipCode = filteredZipCodes[indexPath.row]
         } else {
-            zipCode = zipCodes[indexPath.row]
+            zipCode = viewModel.zipCodes[indexPath.row]
         }
         cell.textLabel?.text = zipCode.getCodPostal()
         cell.detailTextLabel?.text = zipCode.desigPostal
@@ -166,6 +160,7 @@ extension ZipCodeListViewController: ZipCodeListViewModelOutput {
     }
     
     func pull(data: [ZipCodeModel]) {
-        zipCodes = data
+        viewModel.zipCodes = data
+        updateUI()
     }
 }

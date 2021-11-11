@@ -28,8 +28,8 @@ class ZipCodesService {
     // MARK:- Public instance methods
     
     func fetchZipCodes(with items: Int, completionHandler: @escaping (ZipCodesServicesHandler) -> Void) {
-        if let zipCodeFileURL = repository.url(forKey: "zipCodes") {
-            if let parsedCSV = parseCSV(from: zipCodeFileURL, with: items) {
+        if let url = repository.url(forKey: "zipCodes") {
+            if let parsedCSV = parseCSV(from: url, with: items) {
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: parsedCSV, options: .prettyPrinted)
                     let zipCodes = try JSONDecoder().decode([ZipCodeModel].self, from: jsonData)
