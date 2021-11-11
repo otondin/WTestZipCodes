@@ -19,10 +19,10 @@ An iOS challenge project built using MVVM design pattern.
 - This project doesn't uses any external or third-party dependency
 
 ### To-Do issues
-- [ ] Implementing pagination on ZipCodeListViewController to zip codes
+- [ ] Implementing pagination on zip codes list
 - [ ] Handling errors with humanized messages
-- [ ] Adding Unit test to ZipCodeService component
-- [ ] Adding Unit test to ZipCodeViewModel component
+- [ ] Adding Unit test to zio code service component
+- [ ] Adding Unit test to zip code viewmodel component
 
 
 ### Screenshots
